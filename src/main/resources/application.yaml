@@ -1,0 +1,33 @@
+my:
+  email:
+    to: ${adminEmail}
+    subject: 'Daily Reporting'
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/taskdb
+    username: task
+    password: p@ssw0rd
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+  security:
+    user:
+      name: test
+      password: test
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${senderEmail}
+    password: ${senderToken}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+        mime:
+          charset=UTF:
